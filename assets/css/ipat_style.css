@@ -5,7 +5,8 @@ table.ipatSettings tr.ipat_widgetType td {
 	color:#fff;
 	font-size:13px;
 	font-family: arial;
-	font-weight:bold;}
+	font-weight:bold;
+	line-height: 13px;}
 .ipat_widget {
 	position: relative;}
 .ipat_widget img {
@@ -16,28 +17,28 @@ table.ipatSettings tr.ipat_widgetType td {
 .textwidget .ipat_clear {
 	display: inline-block;}
 .ipat_widgetType1 .ipat_widgetTreeCount {
-	top:126px;
+	top:129px;
 	right:6px;}
 .ipat_widgetType2 .ipat_widgetTreeCount {
-	top:24px;
+	top:27px;
 	right:14px;}
 .ipat_widgetType3 .ipat_widgetTreeCount {
-	top:94px;
+	top:97px;
 	right:4px;}
 .ipat_widgetType4 .ipat_widgetTreeCount {
-	top:20px;
+	top:23px;
 	right:4px;}
 .ipat_widgetType1 .ipat_widgetCo2Saving {
-	top:165px;
+	top:168px;
 	right:6px;}
 .ipat_widgetType2 .ipat_widgetCo2Saving {
-	top:63px;
+	top:66px;
 	right:14px;}
 .ipat_widgetType3 .ipat_widgetCo2Saving {
-	top:129px;
+	top:132px;
 	right:4px;}
 .ipat_widgetType4 .ipat_widgetCo2Saving {
-	top:56px;
+	top:59px;
 	right:4px;}
 .ipat_widgetType1 {
 	width:120px}

@@ -24,6 +24,10 @@ Your ID is visible in the address bar of your browser → https://www.iplantatre
 
 == Changelog ==
 
+= 1.0.4 =
+* show CO2=0 if userID not provided
+* more CSS fixes
+
 = 1.0.3 =
 * several CSS fixes
 
