@@ -1,0 +1,73 @@
+table.ipatSettings tr.ipat_widgetType td {
+	vertical-align:top }
+.ipat_widget .ipat_widgetTreeCount, .ipat_widget .ipat_widgetCo2Saving {
+	position: absolute;
+	color:#fff;
+	font-size:15px;}
+.ipat_widget {
+	position: relative;}
+.ipat_widget img {
+	padding:0;
+	border: 0 none;
+	border-radius: 4px;}
+
+.textwidget .ipat_clear {
+	display: inline-block;}
+.ipat_widgetType1 .ipat_widgetTreeCount {
+	bottom:50px;
+	right:6px;}
+.ipat_widgetType2 .ipat_widgetTreeCount {
+	bottom:52px;
+	right:14px;}
+.ipat_widgetType3 .ipat_widgetTreeCount {
+	bottom:42px;
+	right:4px;}
+.ipat_widgetType4 .ipat_widgetTreeCount {
+	bottom:47px;
+	right:4px;}
+.ipat_widgetType1 .ipat_widgetCo2Saving {
+	bottom:10px;
+	right:6px;}
+.ipat_widgetType2 .ipat_widgetCo2Saving {
+	bottom:14px;
+	right:14px;}
+.ipat_widgetType3 .ipat_widgetCo2Saving {
+	bottom:7px;
+	right:4px;}
+.ipat_widgetType4 .ipat_widgetCo2Saving {
+	bottom:10px;
+	right:4px;}
+.ipat_widgetType1 {
+	width:120px}
+.ipat_widgetType2 {
+	width:220px}
+.ipat_widgetType3 {
+	width:100px}
+.ipat_widgetType4 {
+	width:180px}
+
+tr.ipat_widgetType .ipat_widget {
+	margin: 0;}
+.ipat_alignCenter {
+	margin: 0 auto;
+	display: block;}
+.ipat_alignRight {
+	float:right;
+	margin-left: 1em;}
+.ipat_alignLeft {
+	float:left;
+	margin-right: 1em;}
+
+.ipat_alignSidebarCenter {
+	margin: 0 auto;
+	display: block;}
+.ipat_alignSidebarRight {
+	display: block;
+	margin: 0 0 0 auto;}
+.ipat_alignSidebarLeft {
+	display: block;
+	margin: 0 auto 0 0;}
+.ipatSettings input + span {
+	padding: 0 2em 0 0.3em;}
+
+
