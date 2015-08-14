@@ -3,7 +3,7 @@ Contributors: Hellstrom
 Tags: ipat,widget,i plant a tree
 Requires at least: 4.2.2
 Tested up to: 4.2.3
-Stable tag: 1.0.3
+Stable tag: 1.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0
 
@@ -23,6 +23,9 @@ You can find your UserID when visiting your profile. Log in to www.iplantatree.o
 Your ID is visible in the address bar of your browser → https://www.iplantatree.org/user/**thisIsYourID**
 
 == Changelog ==
+
+= 1.1 =
+* added german localization
 
 = 1.0.4 =
 * show CO2=0 if userID not provided

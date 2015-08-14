@@ -5,7 +5,7 @@ Text Domain: i-plant-a-tree
 Plugin URI: https://lightframefx.de
 Description: Dieses Plugin zeigt die via "I Plant A Tree" gepflanzten Bäume sowie das gesparte CO2 an.
 Author: Micha
-Version: 1.0.4
+Version: 1.1
 Author URI: https://lightframefx.de
 URI: https://lightframefx.de
 Tags: ipat,widget,i plant a tree
