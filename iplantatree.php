@@ -5,7 +5,7 @@ Text Domain: i-plant-a-tree
 Plugin URI: https://lightframefx.de
 Description: Dieses Plugin zeigt die via "I Plant A Tree" gepflanzten Bäume sowie das gesparte CO2 an.
 Author: Micha
-Version: 1.0.2
+Version: 1.0.3
 Author URI: https://lightframefx.de
 URI: https://lightframefx.de
 Tags: ipat,widget,i plant a tree
@@ -337,7 +337,11 @@ function ipat_getRemoteWidgetData ($ipat_settings) {
 		$treeCount=$widget->{"Widget"}->{"Data"}->{"treeCount"};
 		$co2Saving=$widget->{"Widget"}->{"Data"}->{"co2Saving"};
 		$ipat_settings['lastUpdate']=time();
-		$ipat_settings['treeCount']=intval($treeCount,10);
+		if ($ipat_settings['userID']==0) {
+			$ipat_settings['treeCount']=0;
+		} else {
+			$ipat_settings['treeCount']=intval($treeCount,10);
+		}
 		$ipat_settings['co2Saving']=floatval($co2Saving);
 		update_option('ipat_widget', $ipat_settings);
 		return true;
