@@ -15,6 +15,10 @@ This plugin shows the count of planted trees via *I Plant A Tree*, as well as sa
 
 == Installation ==
 
+For detailed instructions visit the plugin page.
+deutsch: https://lightframefx.de/projects/i-plant-tree-wordpress-plugin/
+english: https://lightframefx.de/projects/i-plant-tree-wordpress-plugin/?lang=en
+
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Go to *Settings › I Plant A Tree* and insert your UserID
 1. Place `[ipat_widget]` in your posts or drag & drop the widget into your sidebar
