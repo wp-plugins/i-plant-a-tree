@@ -4,115 +4,114 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I Plant A Tree 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/i-plant-a-tree\n"
-"POT-Creation-Date: 2015-08-14 16:22+0200\n"
+"POT-Creation-Date: 2015-08-17 11:01+0200\n"
+"PO-Revision-Date: 2015-08-17 11:01+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-08-14 16:27+0200\n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.4\n"
-"Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: de_DE\n"
 
 #: iplantatree.php:192
 msgid "You do not have sufficient permissions to access this page."
-msgstr ""
-"Du hast nicht genügend Rechte, um auf diese Seite zugreifen zu können."
+msgstr "Du hast nicht genügend Rechte, um auf diese Seite zugreifen zu können."
 
-#: iplantatree.php:217
+#: iplantatree.php:218
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: iplantatree.php:222
+#: iplantatree.php:223
 msgid "user-ID"
 msgstr "Benutzer-ID"
 
-#: iplantatree.php:230
+#: iplantatree.php:231
 msgid "language"
 msgstr "Sprache"
 
-#: iplantatree.php:233
+#: iplantatree.php:234
 msgid "german"
 msgstr "deutsch"
 
-#: iplantatree.php:234
+#: iplantatree.php:235
 msgid "english"
 msgstr "englisch"
 
-#: iplantatree.php:235
+#: iplantatree.php:236
 msgid "italian"
 msgstr "italienisch"
 
-#: iplantatree.php:240
+#: iplantatree.php:241
 msgid "widget type"
 msgstr "Widgettyp"
 
-#: iplantatree.php:285
+#: iplantatree.php:286
 msgid "update interval"
 msgstr "Update-Intervall"
 
-#: iplantatree.php:289
+#: iplantatree.php:290
 msgid "4 hours"
 msgstr "4 Stunden"
 
-#: iplantatree.php:290
+#: iplantatree.php:291
 msgid "12 hours"
 msgstr "12 Stunden"
 
-#: iplantatree.php:291
+#: iplantatree.php:292
 msgid "24 hours"
 msgstr "24 Stunden"
 
-#: iplantatree.php:292
+#: iplantatree.php:293
 msgid ""
-"The update interval determines how often new data will be gotten from "
-"server. Usually a daily update will do."
+"The update interval determines how often new data will be gotten from server. "
+"Usually a daily update will do."
 msgstr ""
 "Das Update-Intervall bestimmt, wie häufig aktuelle Daten vom Server geholt "
 "werden. Im Normalfall genügt ein tägliches Update."
 
-#: iplantatree.php:298
+#: iplantatree.php:299
 msgid "save changes"
 msgstr "Änderungen speichern"
 
-#: iplantatree.php:303
+#: iplantatree.php:304
 msgid "Error: Server not accessible."
 msgstr "Fehler: Server nicht erreichbar."
 
-#: iplantatree.php:306
+#: iplantatree.php:307
 msgid ""
-"Your settings were saved, but no actual data could be retrieved from the "
-"IPAT-server."
+"Your settings were saved, but no actual data could be retrieved from the IPAT-"
+"server."
 msgstr ""
-"Deine Einstellungen wurden gespeichert, aber es konnten keine aktuellen "
-"Daten empfangen werden."
+"Deine Einstellungen wurden gespeichert, aber es konnten keine aktuellen Daten "
+"empfangen werden."
 
-#: iplantatree.php:406
+#: iplantatree.php:412
 msgid "Title"
 msgstr "Titel"
 
-#: iplantatree.php:410
+#: iplantatree.php:416
 msgid "Widget alignment"
 msgstr "Widget-Ausrichtung"
 
-#: iplantatree.php:411
+#: iplantatree.php:417
 msgid "left"
 msgstr "links"
 
-#: iplantatree.php:412
+#: iplantatree.php:418
 msgid "centered"
 msgstr "zentriert"
 
-#: iplantatree.php:413
+#: iplantatree.php:419
 msgid "right"
 msgstr "rechts"
 
-#: iplantatree.php:416
+#: iplantatree.php:422
 msgid "Text above widget"
 msgstr "Text über dem Widget"
 
-#: iplantatree.php:420
+#: iplantatree.php:426
 msgid "Text below widget"
 msgstr "Text unter dem Widget"
 
@@ -127,9 +126,11 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Dieses Plugin zeigt die via \"I Plant A Tree\" gepflanzten Bäume sowie das "
-"gesparte CO2 an."
+"This plugin shows the count of planted trees via \"I Plant A Tree\", as well "
+"as saved CO2."
 msgstr ""
+"Dieses Plugin zeigt die via \"I plant a tree\" gepflanzten Bäume sowie das "
+"gesparte CO2 an."
 
 #. Author of the plugin/theme
 msgid "Micha"
@@ -138,3 +139,10 @@ msgstr ""
 #. Tags of the plugin/theme
 msgid "ipat,widget,i plant a tree"
 msgstr ""
+
+#~ msgid ""
+#~ "This plugin shows the count of planted trees via *I Plant A Tree*, as well "
+#~ "as saved CO2."
+#~ msgstr ""
+#~ "Dieses Plugin zeigt die via \"I plant a tree\" gepflanzten Bäume sowie das "
+#~ "gesparte CO2 an."
