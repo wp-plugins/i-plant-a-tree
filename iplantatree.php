@@ -3,7 +3,7 @@
 Plugin Name: I Plant A Tree
 Text Domain: i-plant-a-tree
 Plugin URI: https://lightframefx.de
-Description: This plugin shows the count of planted trees via *I Plant A Tree*, as well as saved CO2.
+Description: This plugin shows the count of planted trees via "I Plant A Tree", as well as saved CO2.
 Author: Micha
 Version: 1.1
 Author URI: https://lightframefx.de
