@@ -5,7 +5,7 @@ Text Domain: i-plant-a-tree
 Plugin URI: https://lightframefx.de
 Description: This plugin shows the count of planted trees via "I Plant A Tree", as well as saved CO2.
 Author: Micha
-Version: 1.1
+Version: 1.1.1
 Author URI: https://lightframefx.de
 URI: https://lightframefx.de
 Tags: ipat,widget,i plant a tree
@@ -25,23 +25,17 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
-
-function ipat_saveLog($logText) {
-	$logText=date('Ymd H:i:s')." ".$logText."\r\n";
-	$handle = fopen ( plugin_dir_path( __FILE__ ) . "ipat.log", "a" );
-	fwrite ($handle,$logText);
-	fclose ($handle);
-}
+defined( 'ABSPATH' ) or die( 'You may not access this file directly.' );
 
 if (!class_exists('ipat_widget')) {
     class ipat_widget {
         var $settings;
-		var $log;
 
 		function ipat_widget() {
 			$this->getOptions();
-			if (function_exists('load_plugin_textdomain')) load_plugin_textdomain('i-plant-a-tree', PLUGINDIR.'/'.dirname(plugin_basename(__FILE__)).'/languages', dirname(plugin_basename( __FILE__ )).'/languages');
+			if (function_exists('load_plugin_textdomain')) {
+				load_plugin_textdomain('i-plant-a-tree', PLUGINDIR.'/'.dirname(plugin_basename(__FILE__)).'/languages', dirname(plugin_basename( __FILE__ )).'/languages');
+			}
 
 			// Example Shortcode [date] add with: add_shortcode('date', array(&$this,'show_date'));
 			add_shortcode('ipat_widget', array(&$this,'ipat_widgetShortcode'));
@@ -53,16 +47,12 @@ if (!class_exists('ipat_widget')) {
 		}
 		function getOptions() {
 			$this->settings = get_option('ipat_widget');
-			$this->log=json_encode($this->settings);
-			//ipat_saveLog("getOptions: ".$this->log);
 		}
 		function activate() {
 			// Create Tables if needed or generate whatever on installation
 			$basicSettings = get_option('ipat_widget');
-			$log=json_encode($basicSettings);
-			ipat_saveLog("Aktivierung startet: ".$log);
 			if (!($basicSettings)) {
-				// Plugin wurde noch nie aktiviert
+				// first activation of plugin ever
 				$basicSettings['userID']=0;
 				$basicSettings['lastUpdate']=0;
 				$basicSettings['remoteHost']=get_bloginfo(wpurl);
@@ -75,11 +65,9 @@ if (!class_exists('ipat_widget')) {
 				$basicSettings['widgetControlAlign']='center';
 				$basicSettings['widgetControlTextBefore']='Dieses Blog ist CO<sub>2</sub>-neutral.';
 				$basicSettings['widgetControlTextAfter']='';
-				//$basicSettings['token']=wp_generate_password(8,false);
 				update_option('ipat_widget', $basicSettings);
-				ipat_saveLog("Plugin wurde zum ersten Mal aktiviert: ", $basicSettings);
 			} else {
-				// Plugin wurde früher schon mal aktiviert
+				// re-activation of plugin
 				if (!array_key_exists('remoteHost',$basicSettings)) {
 					$basicSettings['remoteHost']=get_bloginfo(wpurl);
 				}
@@ -116,14 +104,9 @@ if (!class_exists('ipat_widget')) {
 				if (!array_key_exists('widgetControlTextAfter',$basicSettings)) {
 					$basicSettings['widgetControlTextAfter']='';
 				}
-				// Der Token wird auch bei erneuter Aktivierung neu generiert
-				//$basicSettings['token']=wp_generate_password(8,false);
 				update_option('ipat_widget', $basicSettings);
-				ipat_saveLog("Plugin wurde früher schon mal aktiviert: ", $basicSettings);
 			}
 			$basicSettings = get_option('ipat_widget');
-			$log=json_encode($basicSettings);
-			ipat_saveLog("Aktivierung beendet: ".$log);
 		}
 		function uninstall() {
 			// Delete Tables or settings if needed be deinstallation
@@ -140,8 +123,7 @@ if (!class_exists('ipat_widget')) {
 			switch ($atts['align']) {
 				case 'right': $ipat_extraStyle='ipat_alignRight '.$atts['class']; break;
 				case 'left': $ipat_extraStyle='ipat_alignLeft '.$atts['class']; break;
-				case 'center': $ipat_extraStyle='ipat_alignCenter '.$atts['class']; break;
-				default: $ipat_extraStyle=$atts['class']; break;
+				default: $ipat_extraStyle='ipat_alignCenter '.$atts['class']; break; // case 'center'
 			}
 			ipat_updateIfNecessary();
 			$ipat_settings = get_option('ipat_widget');
@@ -194,7 +176,7 @@ function ipat_plugin_options() {
 	$ipat_settings = get_option('ipat_widget');
 	$ipat_remoteUpdateSuccessful=true;
 	if (isset($_POST['ipat_submit'])) {
-		// gespeicherte Änderungen übernehmen
+		// save submitted settings
 		$ipat_settings['userID']=intval($_POST['ipat_userID'],10);
 		$ipat_settings['remoteHost']=get_bloginfo('wpurl');
 		$ipat_settings['widgetType']=intval($_POST['ipat_widgetType'],10);
@@ -205,9 +187,6 @@ function ipat_plugin_options() {
 		$ipat_settings['lang']=$ipat_language;
 		$ipat_settings['refreshInterval']=intval($_POST['ipat_refreshInterval'],10);
 		if ($ipat_settings['refreshInterval']==0 || $ipat_settings['refreshInterval']==1) $ipat_settings['refreshInterval']=1440;
-		//echo "<pre>";
-		//echo print_r($ipat_settings);
-		//echo "</pre>";
 		update_option('ipat_widget', $ipat_settings);
 		$ipat_remoteUpdateSuccessful=ipat_updateIfNecessary(true);
 		$ipat_settings = get_option('ipat_widget');
@@ -291,7 +270,6 @@ function ipat_plugin_options() {
 						<input type="radio" <?php if ($ipat_settings['refreshInterval']==720) {echo 'checked="checked"'; $ipat_intervalChecked=true;}?> value="720" name="ipat_refreshInterval"><span class="m-l"><?php _e('12 hours','i-plant-a-tree');?></span>
 						<input type="radio" <?php if ($ipat_settings['refreshInterval']==1440 || !$ipat_intervalChecked) echo 'checked="checked"';?> value="1440" name="ipat_refreshInterval"><span class="m-l"><?php _e('24 hours','i-plant-a-tree');?></span>
 						<p class="description"><?php _e('The update interval determines how often new data will be gotten from server. Usually a daily update will do.','i-plant-a-tree');?></p>
-						<!--Das Update-Interval bestimmt, wie häufig aktuelle Daten vom Server geholt werden. Im Normalfall genügt ein tägliches Update.-->
 					</td>
 				</tr>
 			</table>
@@ -322,10 +300,8 @@ function ipat_updateIfNecessary($forced=false) {
 }
 
 function ipat_getRemoteWidgetData ($ipat_settings) {
-	//$url = "https://www.iplantatree.org/widget/ipatWidget.html?uid=3070&wt=2&rh=https%3a%2f%2fwww.vollkornkartoffeln.de&lang=de";
 	$url = "https://www.iplantatree.org/widget/ipatWidget.html?uid=".$ipat_settings['userID']."&wt=".$ipat_settings['widgetType']."&lang=".$ipat_settings['lang']."";
 	if (!@get_headers($url)) {
-		ipat_saveLog("Error getting data: ".$url);
 		return false;
 	} else {
 		$fileText=file_get_contents($url);
@@ -383,14 +359,14 @@ function ipat_sidebarDisplay($args) {
 }
 
 wp_register_sidebar_widget(
-    'ipat_sidebar',				// your unique widget id
+    'ipat_sidebar',				// unique widget id
     'I Plant A Tree',			// widget name
     'ipat_sidebarDisplay',		// callback function
     array(						// options
         'description' => 'Shows the saved CO2 in your sidebar.')
 );
 wp_register_widget_control(
-	'ipat_sidebar',				// your unique widget id
+	'ipat_sidebar',				// unique widget id
 	'I Plant A Tree',			// widget name
 	'ipat_widgetControl'		// Callback function
 );

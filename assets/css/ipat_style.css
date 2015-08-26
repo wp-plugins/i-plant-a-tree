@@ -73,4 +73,5 @@ tr.ipat_widgetType .ipat_widget {
 .ipatSettings input + span {
 	padding: 0 2em 0 0.3em;}
 
-
+.ipat_widget a {
+	border:none;}
