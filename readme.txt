@@ -2,7 +2,7 @@
 Contributors: Hellstrom
 Tags: ipat,widget,i plant a tree
 Requires at least: 4.2.2
-Tested up to: 4.2.3
+Tested up to: 4.3
 Stable tag: 1.1.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0
@@ -25,6 +25,7 @@ Your ID is visible in the address bar of your browser → https://www.iplantatre
 == Changelog ==
 
 = 1.1.1 =
+* checked compatibility with WP 4.3
 * some code cleaning and a minor CSS fix
 
 = 1.1 =
