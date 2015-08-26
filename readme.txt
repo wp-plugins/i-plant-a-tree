@@ -17,10 +17,12 @@ This plugin shows the count of planted trees via *I Plant A Tree*, as well as sa
 
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Go to *Settings › I Plant A Tree* and insert your UserID
-1. Place `[ipat_widget]` in your posts or drag & drop the widget into your sidebar
+1. Place `[ipat_widget]` in your posts **or** drag & drop the widget into your sidebar
 
 You can find your UserID when visiting your profile. Log in to www.iplantatree.org and click *my forest › my profile*.
 Your ID is visible in the address bar of your browser → https://www.iplantatree.org/user/**thisIsYourID**
+
+There are some possibilities to configure the widget manually. Please see https://lightframefx.de/projects/i-plant-tree-wordpress-plugin/?lang=en for detailed instructions.
 
 == Changelog ==
 
