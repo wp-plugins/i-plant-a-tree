@@ -3,7 +3,7 @@ Contributors: Hellstrom
 Tags: ipat,widget,i plant a tree
 Requires at least: 4.2.2
 Tested up to: 4.3
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0
 
@@ -25,6 +25,9 @@ Your ID is visible in the address bar of your browser → https://www.iplantatre
 There are some possibilities to configure the widget manually. Please see https://lightframefx.de/projects/i-plant-tree-wordpress-plugin/?lang=en for detailed instructions.
 
 == Changelog ==
+
+= 1.2.1 =
+* added spanish localization
 
 = 1.2 =
 * added language options for shortcodes
