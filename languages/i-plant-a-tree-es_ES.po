@@ -1,0 +1,159 @@
+# Copyright (C) 2015 I Plant A Tree
+# This file is distributed under the same license as the I Plant A Tree package.
+msgid ""
+msgstr ""
+"Project-Id-Version: I Plant A Tree 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/i-plant-a-tree\n"
+"POT-Creation-Date: 2015-08-27 20:12:16+00:00\n"
+"PO-Revision-Date: 2015-08-29 10:13+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: iplantatree.php:185
+msgid "You do not have sufficient permissions to access this page."
+msgstr "No tienes autorización para acceder a esta página."
+
+#: iplantatree.php:208
+msgid "Settings"
+msgstr "Configuración"
+
+#: iplantatree.php:213
+msgid "user-ID"
+msgstr "Identificación del usuario"
+
+#: iplantatree.php:221
+msgid "language"
+msgstr "Idioma"
+
+#: iplantatree.php:224
+msgid "german"
+msgstr "alemán"
+
+#: iplantatree.php:225
+msgid "english"
+msgstr "inglés"
+
+#: iplantatree.php:226
+msgid "italian"
+msgstr "italiano"
+
+#: iplantatree.php:227
+msgid ""
+"This global setting can be overridden manually in the shortcode, if necessary."
+msgstr ""
+"Se puede sobreescribir esta configuración basica manualmente dentro del "
+"shortcode cuando sea necesario."
+
+#: iplantatree.php:232
+msgid "widget type"
+msgstr "Tipo de widget"
+
+#: iplantatree.php:277
+msgid "update interval"
+msgstr "Intervalo de actualización"
+
+#: iplantatree.php:281
+msgid "4 hours"
+msgstr "4 horas"
+
+#: iplantatree.php:282
+msgid "12 hours"
+msgstr "12 horas"
+
+#: iplantatree.php:283
+msgid "24 hours"
+msgstr "24 horas"
+
+#: iplantatree.php:284
+msgid ""
+"The update interval determines how often new data will be gotten from server. "
+"Usually a daily update will do."
+msgstr ""
+"El intervalo de actualización determina la frecuencia de descarga de datos "
+"nuevos del servidor. Normalmente un intervalo de 24 horas es suficiente."
+
+#: iplantatree.php:289
+msgid "save changes"
+msgstr "Guardar cambios"
+
+#: iplantatree.php:294
+msgid "Error: Server not accessible."
+msgstr "Error: Servidor inaccesible."
+
+#: iplantatree.php:297
+msgid ""
+"Your settings were saved, but no actual data could be retrieved from the IPAT-"
+"server."
+msgstr ""
+"Se han guardado los cambios, pero no fue posible recibido datos actuales del "
+"servidor.Deine Einstellungen wurden gespeichert, aber es konnten keine "
+"aktuellen Daten empfangen werden."
+
+#: iplantatree.php:403
+msgid "Title"
+msgstr "Título"
+
+#: iplantatree.php:407
+msgid "Widget alignment"
+msgstr "Alineación del Widget"
+
+#: iplantatree.php:408
+msgid "left"
+msgstr "a la izquierda"
+
+#: iplantatree.php:409
+msgid "centered"
+msgstr "centrado"
+
+#: iplantatree.php:410
+msgid "right"
+msgstr "a la derecha"
+
+#: iplantatree.php:413
+msgid "Text above widget"
+msgstr "Texto arriba del widget"
+
+#: iplantatree.php:417
+msgid "Text below widget"
+msgstr "Texto abajo del Widget"
+
+#. Plugin Name of the plugin/theme
+msgid "I Plant A Tree"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://lightframefx.de/projects/i-plant-tree-wordpress-plugin/?lang=en"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin shows the count of planted trees via \"I Plant A Tree\", as well "
+"as saved CO2."
+msgstr ""
+"Este Plugin te enseña el número de árboles plantados por \"I plant a tree\" "
+"así como la cantidad de CO2 ahorrado."
+
+#. Author of the plugin/theme
+msgid "Micha"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://lightframefx.de"
+msgstr ""
+
+#. Tags of the plugin/theme
+msgid "ipat,widget,i plant a tree"
+msgstr ""
+
+#~ msgid ""
+#~ "This plugin shows the count of planted trees via *I Plant A Tree*, as well "
+#~ "as saved CO2."
+#~ msgstr ""
+#~ "Dieses Plugin zeigt die via \"I plant a tree\" gepflanzten Bäume sowie das "
+#~ "gesparte CO2 an."

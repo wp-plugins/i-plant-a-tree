@@ -5,12 +5,12 @@ Text Domain: i-plant-a-tree
 Plugin URI: https://lightframefx.de/projects/i-plant-tree-wordpress-plugin/?lang=en
 Description: This plugin shows the count of planted trees via "I Plant A Tree", as well as saved CO2.
 Author: Micha
-Version: 1.1.1
+Version: 1.2.1
 Author URI: https://lightframefx.de
 URI: https://lightframefx.de
 Tags: ipat,widget,i plant a tree
 Requires at least: 4.2.2
-Tested up to: 4.2.3
+Tested up to: 4.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0
 */
@@ -109,24 +109,33 @@ if (!class_exists('ipat_widget')) {
 			$basicSettings = get_option('ipat_widget');
 		}
 		function uninstall() {
-			// Delete Tables or settings if needed be deinstallation
+			// Delete Tables or settings if needed be on deinstallation
 		}
 		function add_menupages() {
 			// For Option Pages, see WordPress function: add_options_page()
 			// For own Menu Pages, see WordPress function: add_menu_page() and add_submenu_page()
 		}
 		function ipat_widgetShortcode($atts) {
+			ipat_updateIfNecessary();
+			$ipat_settings = get_option('ipat_widget');
 			$atts = shortcode_atts( array(
 				'align' => '',
-				'class' => ''
+				'class' => '',
+				'language' => ''
 			), $atts, 'ipat_widget' );
 			switch ($atts['align']) {
 				case 'right': $ipat_extraStyle='ipat_alignRight '.$atts['class']; break;
 				case 'left': $ipat_extraStyle='ipat_alignLeft '.$atts['class']; break;
 				default: $ipat_extraStyle='ipat_alignCenter '.$atts['class']; break; // case 'center'
 			}
-			ipat_updateIfNecessary();
-			$ipat_settings = get_option('ipat_widget');
+			switch ($atts['language']) {
+				case 'de': $ipat_extraLanguage='de'; break;
+				case 'en': $ipat_extraLanguage='en'; break;
+				case 'it': $ipat_extraLanguage='it'; break;
+				default: //ipat_detectLanguage();
+					$ipat_extraLanguage=$ipat_settings['lang'];	// if no local language is set, use global
+					break;
+			}
 			$widgetHTML='';
 			switch ($ipat_settings['widgetType']) {
 				case 2: $widgetImageSize='220x90'; break;
@@ -136,7 +145,9 @@ if (!class_exists('ipat_widget')) {
 			}
 			$widgetHTML.='<span class="ipat_widget ipat_widgetType'.$ipat_settings['widgetType'].' '.$ipat_extraStyle.'">';
 			$widgetHTML.='<a href="https://www.iplantatree.org/user/'.$ipat_settings['userID'].'" target="_blank">';
-			$widgetHTML.='<img src="'.plugins_url().'/'.dirname(plugin_basename(__FILE__)).'/assets/image/widget-'.$widgetImageSize.'_'. $ipat_settings['lang'].'.png"/>';
+			$widgetHTML.='<img src="'.plugins_url().'/'.dirname(plugin_basename(__FILE__)).'/assets/image/widget-'.$widgetImageSize.'_';
+			$widgetHTML.=$ipat_extraLanguage;
+			$widgetHTML.='.png"/>';
 			$widgetHTML.='<span class="ipat_widgetTreeCount">'.$ipat_settings['treeCount'].'</span>';
 			$widgetHTML.='<span class="ipat_widgetCo2Saving">'.number_format(round($ipat_settings['co2Saving'],6),6).'</span>';
 			$widgetHTML.="</a>";
@@ -213,6 +224,7 @@ function ipat_plugin_options() {
 						<input type="radio" <?php if ($ipat_settings['lang']=="de") echo 'checked="checked"';?> value="de" name="ipat_language"><span class="ipat_language"><?php _e('german','i-plant-a-tree');?></span>
 						<input type="radio" <?php if ($ipat_settings['lang']=="en") echo 'checked="checked"';?> value="en" name="ipat_language"><span class="ipat_language"><?php _e('english','i-plant-a-tree');?></span>
 						<input type="radio" <?php if ($ipat_settings['lang']=="it") echo 'checked="checked"';?> value="it" name="ipat_language"><span class="ipat_language"><?php _e('italian','i-plant-a-tree');?></span>
+						<p class="description"><?php _e('This global setting can be overridden manually in the shortcode, if necessary.','i-plant-a-tree');?></p>
 					</td>
 				</tr>
 				<tr class="ipat_widgetType">
@@ -371,6 +383,9 @@ wp_register_widget_control(
 	'ipat_widgetControl'		// Callback function
 );
 
+function ipat_detectLanguage() {
+	return "de";
+}
 
 function ipat_widgetControl($args=array(), $params=array()) {
 	//the form is submitted, save into database

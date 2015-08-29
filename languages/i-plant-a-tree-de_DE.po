@@ -4,114 +4,122 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I Plant A Tree 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/i-plant-a-tree\n"
-"POT-Creation-Date: 2015-08-17 11:01+0200\n"
-"PO-Revision-Date: 2015-08-17 11:01+0200\n"
+"POT-Creation-Date: 2015-08-27 20:12:16+00:00\n"
+"PO-Revision-Date: 2015-08-27 22:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: iplantatree.php:192
+#: iplantatree.php:185
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Du hast nicht genügend Rechte, um auf diese Seite zugreifen zu können."
 
-#: iplantatree.php:218
+#: iplantatree.php:208
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: iplantatree.php:223
+#: iplantatree.php:213
 msgid "user-ID"
 msgstr "Benutzer-ID"
 
-#: iplantatree.php:231
+#: iplantatree.php:221
 msgid "language"
 msgstr "Sprache"
 
-#: iplantatree.php:234
+#: iplantatree.php:224
 msgid "german"
 msgstr "deutsch"
 
-#: iplantatree.php:235
+#: iplantatree.php:225
 msgid "english"
 msgstr "englisch"
 
-#: iplantatree.php:236
+#: iplantatree.php:226
 msgid "italian"
 msgstr "italienisch"
 
-#: iplantatree.php:241
+#: iplantatree.php:227
+msgid ""
+"This global setting can be overridden manually in the shortcode, if "
+"necessary."
+msgstr ""
+"Diese globale Einstellung kann bei Bedarf manuell im Shortcode überschrieben "
+"werden."
+
+#: iplantatree.php:232
 msgid "widget type"
 msgstr "Widgettyp"
 
-#: iplantatree.php:286
+#: iplantatree.php:277
 msgid "update interval"
 msgstr "Update-Intervall"
 
-#: iplantatree.php:290
+#: iplantatree.php:281
 msgid "4 hours"
 msgstr "4 Stunden"
 
-#: iplantatree.php:291
+#: iplantatree.php:282
 msgid "12 hours"
 msgstr "12 Stunden"
 
-#: iplantatree.php:292
+#: iplantatree.php:283
 msgid "24 hours"
 msgstr "24 Stunden"
 
-#: iplantatree.php:293
+#: iplantatree.php:284
 msgid ""
-"The update interval determines how often new data will be gotten from server. "
-"Usually a daily update will do."
+"The update interval determines how often new data will be gotten from "
+"server. Usually a daily update will do."
 msgstr ""
 "Das Update-Intervall bestimmt, wie häufig aktuelle Daten vom Server geholt "
 "werden. Im Normalfall genügt ein tägliches Update."
 
-#: iplantatree.php:299
+#: iplantatree.php:289
 msgid "save changes"
 msgstr "Änderungen speichern"
 
-#: iplantatree.php:304
+#: iplantatree.php:294
 msgid "Error: Server not accessible."
 msgstr "Fehler: Server nicht erreichbar."
 
-#: iplantatree.php:307
+#: iplantatree.php:297
 msgid ""
-"Your settings were saved, but no actual data could be retrieved from the IPAT-"
-"server."
+"Your settings were saved, but no actual data could be retrieved from the "
+"IPAT-server."
 msgstr ""
-"Deine Einstellungen wurden gespeichert, aber es konnten keine aktuellen Daten "
-"empfangen werden."
+"Deine Einstellungen wurden gespeichert, aber es konnten keine aktuellen "
+"Daten empfangen werden."
 
-#: iplantatree.php:412
+#: iplantatree.php:403
 msgid "Title"
 msgstr "Titel"
 
-#: iplantatree.php:416
+#: iplantatree.php:407
 msgid "Widget alignment"
 msgstr "Widget-Ausrichtung"
 
-#: iplantatree.php:417
+#: iplantatree.php:408
 msgid "left"
 msgstr "links"
 
-#: iplantatree.php:418
+#: iplantatree.php:409
 msgid "centered"
 msgstr "zentriert"
 
-#: iplantatree.php:419
+#: iplantatree.php:410
 msgid "right"
 msgstr "rechts"
 
-#: iplantatree.php:422
+#: iplantatree.php:413
 msgid "Text above widget"
 msgstr "Text über dem Widget"
 
-#: iplantatree.php:426
+#: iplantatree.php:417
 msgid "Text below widget"
 msgstr "Text unter dem Widget"
 
@@ -120,8 +128,7 @@ msgid "I Plant A Tree"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "https://lightframefx.de"
+msgid "https://lightframefx.de/projects/i-plant-tree-wordpress-plugin/?lang=en"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -136,13 +143,17 @@ msgstr ""
 msgid "Micha"
 msgstr ""
 
+#. Author URI of the plugin/theme
+msgid "https://lightframefx.de"
+msgstr ""
+
 #. Tags of the plugin/theme
 msgid "ipat,widget,i plant a tree"
 msgstr ""
 
 #~ msgid ""
-#~ "This plugin shows the count of planted trees via *I Plant A Tree*, as well "
-#~ "as saved CO2."
+#~ "This plugin shows the count of planted trees via *I Plant A Tree*, as "
+#~ "well as saved CO2."
 #~ msgstr ""
-#~ "Dieses Plugin zeigt die via \"I plant a tree\" gepflanzten Bäume sowie das "
-#~ "gesparte CO2 an."
+#~ "Dieses Plugin zeigt die via \"I plant a tree\" gepflanzten Bäume sowie "
+#~ "das gesparte CO2 an."
