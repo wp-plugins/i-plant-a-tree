@@ -5,7 +5,7 @@ Text Domain: i-plant-a-tree
 Plugin URI: https://lightframefx.de/projects/i-plant-tree-wordpress-plugin/?lang=en
 Description: This plugin shows the count of planted trees via "I Plant A Tree", as well as saved CO2.
 Author: Micha
-Version: 1.2.1
+Version: 1.3
 Author URI: https://lightframefx.de
 URI: https://lightframefx.de
 Tags: ipat,widget,i plant a tree
@@ -311,16 +311,45 @@ function ipat_updateIfNecessary($forced=false) {
 	return $ipat_remoteUpdateSuccessful;
 }
 
+function ipat_urlGetContents_cURL ($url) {
+	if (!function_exists('curl_init')){		// cURL is not installed!
+		return false;
+    }
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $ipat_fileContent = curl_exec($ch);
+    curl_close($ch);
+	return $ipat_fileContent;
+}
+
+function ipat_urlGetContents_file_get_contents ($url) {
+	$ipat_fileContent=@file_get_contents($url);
+	return $ipat_fileContent;
+}
+
+function ipat_urlGetContents_fopen ($url) {
+	if (function_exists('fopen') && function_exists('stream_get_contents')) {
+        $handle = fopen ($url, "r");
+        $ipat_fileContent=stream_get_contents($handle);
+		fclose ($handle);
+		return $ipat_fileContent;
+	} else {
+		return false;
+	}
+}
+
 function ipat_getRemoteWidgetData ($ipat_settings) {
 	$url = "https://www.iplantatree.org/widget/ipatWidget.html?uid=".$ipat_settings['userID']."&wt=".$ipat_settings['widgetType']."&lang=".$ipat_settings['lang']."";
-	if (!@get_headers($url)) {
+	$ipat_fileContent=ipat_urlGetContents_cURL($url);
+	if (!$ipat_fileContent) { $ipat_fileContent=ipat_urlGetContents_fopen($url); }
+	if (!$ipat_fileContent) { $ipat_fileContent=ipat_urlGetContents_file_get_contents($url);
 		return false;
 	} else {
-		$fileText=file_get_contents($url);
-		$fileText = str_replace(" ", '', $fileText);
-		$fileText = str_replace(array("\r\n","\r","\n","\t","\v","\f","\e"), '', $fileText);
-		$fileText = str_replace("<br>", '', $fileText);
-		preg_match_all("/{.+}/s",$fileText,$jsonPart);
+		$ipat_fileContent = str_replace(" ", '', $ipat_fileContent);
+		$ipat_fileContent = str_replace(array("\r\n","\r","\n","\t","\v","\f","\e"), '', $ipat_fileContent);
+		$ipat_fileContent = str_replace("<br>", '', $ipat_fileContent);
+		preg_match_all("/{.+}/s",$ipat_fileContent,$jsonPart);
 		$widget=json_decode($jsonPart[0][0]);
 		$treeCount=$widget->{"Widget"}->{"Data"}->{"treeCount"};
 		$co2Saving=$widget->{"Widget"}->{"Data"}->{"co2Saving"};
